@@ -40,6 +40,19 @@ app.get('/messages', async (req, res) => {
   }
 })
 
+app.get('/aboutus', (req, res) => {
+  const aboutData = {
+    title: 'Terrance Chen',
+    content: [
+      'Hello I am Terrance Chen, I am an active fan of sports. I love watching football on sundays with my friends and as well as basketball during the weekday. There are many music genres I enjoy: I like R&B, neo-soul and hip-hop',
+      'I am a senior studying computer science at New York University. I enjoy building applications involved in data analytics and data processing. My favorite basketball team is the New York Knicks and my favorite player is Jalen Brunson.'
+    ],
+    imageUrl: '/terryAgile.jpg'
+  };
+  res.json(aboutData);
+});
+
+
 // a route to handle fetching a single message by its id
 app.get('/messages/:messageId', async (req, res) => {
   // load all messages from database
